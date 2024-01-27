@@ -6,6 +6,7 @@ const app = express();
 const dbconfig = require("./db");
 const roomsRoute = require("./routes/roomsRoute");
 
+app.use(express.json());
 app.use("/api/rooms", roomsRoute);
 
 const PORT = process.env.PORT;
