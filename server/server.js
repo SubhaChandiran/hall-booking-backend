@@ -1,11 +1,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require('cors')
+
 
 dotenv.config();
 const app = express();
 const dbconfig = require("./db");
 const roomsRoute = require("./routes/roomsRoute");
 const usersRoute = require("./routes/usersRoute");
+app.use(cors());
 
 app.use(express.json());
 app.use("/api/rooms", roomsRoute);
